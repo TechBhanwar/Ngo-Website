@@ -1,0 +1,124 @@
+/* Container for the entire gallery */
+body{
+    font-family: "Roboto Serif", serif !important;
+    background: linear-gradient(to bottom, #ffffff, #e6e6e6) !; 
+}
+
+.gallery-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.gallery-container h2{
+    text-align: center;
+    font-size: 30px;
+}
+
+
+
+
+/* Styling for the upload section */
+.upload-section {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Input fields */
+.upload-section input[type="file"],
+.upload-section input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 250px;
+    transition: border-color 0.3s;
+}
+
+.upload-section input[type="file"]:focus,
+.upload-section input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Upload button */
+.upload-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.upload-section button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Grid layout for the cards */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Styling for the cards */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Uniform image size for all cards */
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Card body styling */
+
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #666;
+}
+@media (max-width: 768px) {
+    .upload-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .upload-section input[type="file"],
+    .upload-section input[type="text"],
+    .upload-section button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .upload-section button {
+        padding: 15px;
+        font-size: 18px;
+    }
+}

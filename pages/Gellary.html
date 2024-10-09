@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Css/pages.css">
+</head>
+<body>
+    <div class="gallery-container">
+        <h2>Image Gallery</h2>
+    
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <input type="file" id="imageUpload" accept="image/*">
+            <input type="text" id="imageTitle" placeholder="Enter image title">
+            <button id="uploadButton">Upload</button>
+        </div>
+    
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+            <!-- Existing card for example -->
+            <div class="card">
+                <img src="images/IMG-20240823-WA0026.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+            <!-- New cards will be added here -->
+        </div>
+    </div>
+    
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Load images from local storage when the page loads
+    loadImagesFromLocalStorage();
+
+    document.getElementById('uploadButton').addEventListener('click', function () {
+        const imageUpload = document.getElementById('imageUpload').files[0];
+        const imageTitle = document.getElementById('imageTitle').value;
+
+        if (imageUpload && imageTitle) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const imageData = e.target.result;
+                addImageToGallery(imageData, imageTitle);
+                saveImageToLocalStorage(imageData, imageTitle);
+            };
+            reader.readAsDataURL(imageUpload);
+        } else {
+            alert('Please select an image and enter a title.');
+        }
+    });
+});
+
+function addImageToGallery(imageData, imageTitle) {
+    const newCard = document.createElement('div');
+    newCard.className = 'card';
+    newCard.style.width = '100%';
+
+    newCard.innerHTML = `
+        <img src="${imageData}" class="card-img-top" alt="${imageTitle}">
+        <div class="card-body">
+            <h5 class="card-title">${imageTitle}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    `;
+
+    const galleryGrid = document.querySelector('.gallery-grid');
+    galleryGrid.insertBefore(newCard, galleryGrid.firstChild);
+}
+
+function saveImageToLocalStorage(imageData, imageTitle) {
+    const images = JSON.parse(localStorage.getItem('galleryImages')) || [];
+    images.push({ imageData, imageTitle });
+    localStorage.setItem('galleryImages', JSON.stringify(images));
+}
+
+function loadImagesFromLocalStorage() {
+    const images = JSON.parse(localStorage.getItem('galleryImages')) || [];
+    images.forEach(({ imageData, imageTitle }) => {
+        addImageToGallery(imageData, imageTitle);
+    });
+}
+
+    </script>
+</body>
+</html>

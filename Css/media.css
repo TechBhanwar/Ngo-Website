@@ -1,0 +1,117 @@
+@media only screen and (max-width: 480px){
+ 
+ 
+ 
+  .logo{
+    width: 15%;
+  }
+    .slider-box{
+      height: 300px;
+      overflow: hidden;
+    }
+    .swiper-container{
+      height: 300px;
+    }
+    .swiper-slide .slide-01 {
+      background-image: url(../images/01.jpg);
+    background-size: cover;
+      transform-origin: 50% 50%;
+    }
+    .swiper-slide .slide-02 {
+      background-image: url(../images/02.jpg);
+    background-size: cover;
+      transform-origin: 50% 50%;
+    }
+    .swiper-slide .slide-03 {
+      background-image: url(../images/03.jpg);
+    background-size: cover;
+      transform-origin: 50% 50%;
+    }
+    .slider-text{
+      /* background-color: #3f1348; */
+      width: 100%;
+     margin-top: 40px;
+     margin-left: 0px;
+     padding-left: 40px;
+    
+     
+    }
+    .slider-text1{
+      font-size: 14px !important;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: start;
+      line-height: 7px;
+    }
+    .spann{
+      text-align: start;
+      font-size: 22px;
+      line-height: 36px;
+      margin-bottom: 48px;
+    }
+    .spannn{
+      font-size: 20px;
+      font-weight: 700;
+      width: 100%;
+    margin-top: -40px;
+      text-align: start;
+    }
+    .dbtn{
+      padding: 7px 14px;
+      font-size: 15px;
+    }
+    .grid-container {
+      grid-template-columns: 1fr; /* Single column layout for small screens */
+      grid-gap: 5px; /* Reduce gap for smaller screens */
+    }
+    
+    .grid-item img {
+      height: 200px; /* Reduce image height for smaller screens */
+    }
+    
+    .modal-content {
+      width: 90%; /* Make modal image slightly smaller on small screens */
+      max-width: 90%; /* Ensure modal image stays within the screen width */
+    }
+    
+    .close {
+      top: 10px; /* Adjust close button position */
+      right: 20px; /* Adjust close button position */
+      font-size: 30px; /* Adjust size of close button */
+    }
+    .poor{
+        width: 100%;
+    }
+    .sl .card{
+width: 100%;
+    }
+    .overtext{
+        font-size: 20px;
+        font-size: 20px;
+        right: 0;
+        margin: -184px 9px;
+        text-align: end;
+    }
+    .overtext span{
+        font-size: 17px;
+    }
+    .custom-slide .card-img-top{
+      height: 250px;
+    }
+    .overh{
+      font-size: 24px;
+    }
+    .poor{
+      height: 222px;
+      margin-bottom: 0;
+    }
+    .whead h1{
+      font-size: 21px;
+    }
+    .dtext{
+      font-size: 16px;
+    }
+    
+    
+    
+    }
